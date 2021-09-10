@@ -4,16 +4,17 @@ const mongoose = require('mongoose');
 const Cards = require('./models/dbCards.js');
 const Cors = require('cors');
 
+
 //App config
 const app = express();
-const port = process.env.PORT || 8001;
+const port = process.env.PORT || 5005;
 
 //Middlewares
 app.use(express.json());
 app.use(Cors());
 
 //DB config
-/*
+
 mongoose.connect('mongodb://localhost/tinder',
     { 
     useNewUrlParser: true,
@@ -21,9 +22,9 @@ mongoose.connect('mongodb://localhost/tinder',
     })
     .then(() => console.log('Connexion à MongoDB lewansoon réussie !'))
     .catch(() => console.log('Connexion à MongoDB échouée !'));
-    */
+    
 
-const connection_url = 'mongodb+srv://tinderadmin:eAsyGsiGl8bMYdaa@cluster0.1zmdn.mongodb.net/tinder-swm?retryWrites=true&w=majority';
+/*const connection_url = 'mongodb+srv://tinderadmin:eAsyGsiGl8bMYdaa@cluster0.1zmdn.mongodb.net/tinder-swm?retryWrites=true&w=majority';
 
 mongoose.connect(connection_url, {
     useNewUrlParser:true,
@@ -31,7 +32,7 @@ mongoose.connect(connection_url, {
     useUnifiedTopology:true,
 }).then(() => console.log('Connexion à MongoDB Tinder réussie !'))
 .catch(() => console.log('Connexion à MongoDB Tinder échouée !'));
-
+*/
 
 // API Endpoints
 app.get("/", (req, res) => {
